@@ -3,6 +3,9 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=0"
       - "check-success=terraform fmt"
+      - "check-success=terraform validate"
+      - "check-success=terraform plan"
+      - "check-success=Pre-Commit"
       - "label!=work-in-progress"
     actions:
       merge:
