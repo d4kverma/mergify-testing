@@ -2,7 +2,7 @@ pull_request_rules:
   - name: Automatic merge on approval
     conditions:
       - "#approved-reviews-by>=0"
-      - Terraform GitHub Actions
+      - "check-success=Terraform GitHub Actions"
     actions:
       merge:
         method: merge
