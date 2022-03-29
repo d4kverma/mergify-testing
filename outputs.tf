@@ -1,4 +1,4 @@
-# Module      : S3 BUCKET
+# Module      : S3 BUCKET.
 # Description : Terraform module to create default S3 bucket with logging and encryption
 #               type specific features.
 output "id" {
