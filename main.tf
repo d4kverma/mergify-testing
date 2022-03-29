@@ -19,7 +19,7 @@ module "labels" {
 }
 
 # Module      : S3 BUCKET
-# Description : Terraform module to create S3 bucket with different combination
+# Description : Terraform module to create S3 bucket with different combination . 
 #               type specific features.
 resource "aws_s3_bucket" "s3_default" {
   count = var.create_bucket == true ? 1 : 0
