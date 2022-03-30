@@ -10,5 +10,27 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+        
+  - name: "ask to resolve conflict"
+    conditions:
+      - "conflict"
+      - "-closed"
+    actions:
+      comment:
+       message: "This pull request is now in conflict. Could you fix it @{{author}}? 🙏"
 
- 
+  - name: "remove outdated reviews"
+    conditions:
+      - "base=master"
+    actions:
+      dismiss_reviews:
+       changes_requested: true
+       approved: true
+       message: "This Pull Request has been updated, so we're dismissing all reviews."
+
+  - name: "close Pull Requests without files changed"
+    conditions:
+     - "#files=0"
+    actions:
+     close:
+      message: "This pull request has been automatically closed by Mergify because there are no longer any changes."   
