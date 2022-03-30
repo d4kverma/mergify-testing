@@ -1,5 +1,5 @@
 # Module      : S3 BUCKET.
-# Description : Terraform module to create default S3 bucket with logging and encryption.
+# Description : Terraform module to create default S3 bucket with logging and encryption..
 #               type specific features.
 output "id" {
   value       = join("", aws_s3_bucket.s3_default.*.id)
